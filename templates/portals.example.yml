@@ -57,14 +57,45 @@ title_filter:
     - "Business Systems"
     - "Internal Tools"
     - "Transformation"
+    # -- Software Engineering (general) --
+    - "Software Engineer"
+    - "Software Developer"
+    - "Full Stack"
+    - "Full-Stack"
+    - "Backend Engineer"
+    - "Frontend Engineer"
+    - "Application Engineer"
+    - "Systems Engineer"
+    - "Infrastructure Engineer"
+    - "DevOps"
+    - "Site Reliability"
+    - "SRE"
+    # -- Fintech --
+    - "Fintech"
+    - "Financial Technology"
+    - "Payments"
+    - "Trading"
+    - "Quant"
+    - "Quantitative"
+    # -- Cybersecurity --
+    - "Security Engineer"
+    - "Cybersecurity"
+    - "Application Security"
+    - "AppSec"
+    - "Penetration"
+    - "Red Team"
+    # -- New Grad / Early Career --
+    - "New Grad"
+    - "New Graduate"
+    - "University Grad"
+    - "Entry Level"
+    - "Early Career"
+    - "Rotational"
+    - "Development Program"
   negative:
     # [CUSTOMIZE] Add keywords for roles you want to exclude
-    - "Junior"
     - "Intern"
     - ".NET"
-    - "Java "
-    - "iOS"
-    - "Android"
     - "PHP"
     - "Ruby"
     - "Embedded"
@@ -79,6 +110,12 @@ title_filter:
     - "Oracle EBS"
     - "Mainframe"
     - "COBOL"
+    - "QA Engineer"
+    - "Manual Test"
+    - "Technical Writer"
+    - "Technical Support"
+    - "IT Support"
+    - "Help Desk"
   seniority_boost:
     # These prefixes add relevance but are not required
     - "Senior"
@@ -177,6 +214,78 @@ search_queries:
   # -- RemoteFront (aggregator) --
   - name: RemoteFront — AI & Automation
     query: 'site:remotefront.com "AI Engineer" OR "Solutions Engineer" OR "Automation" OR "LLM" OR "Agent" remote'
+    enabled: true
+
+  # -- New Grad / Early Career --
+  - name: Greenhouse — New Grad SWE
+    query: 'site:boards.greenhouse.io OR site:job-boards.greenhouse.io "New Grad" OR "New Graduate" OR "University Grad" "Software Engineer" OR "AI Engineer"'
+    enabled: true
+
+  - name: Ashby — New Grad SWE
+    query: 'site:jobs.ashbyhq.com "New Grad" OR "New Graduate" OR "University Grad" "Software Engineer" OR "AI Engineer"'
+    enabled: true
+
+  - name: Lever — New Grad SWE
+    query: 'site:jobs.lever.co "New Grad" OR "New Graduate" OR "University Grad" "Software Engineer" OR "AI Engineer"'
+    enabled: true
+
+  - name: LinkedIn — New Grad AI/SWE
+    query: '"New Grad" OR "New Graduate" OR "Entry Level" "Software Engineer" OR "AI Engineer" Boston OR remote'
+    enabled: true
+
+  # -- Fintech --
+  - name: Fintech — All portals
+    query: '"Software Engineer" OR "AI Engineer" fintech OR payments OR "financial technology" OR trading OR quant remote OR Boston'
+    enabled: true
+
+  - name: Greenhouse — Fintech
+    query: 'site:boards.greenhouse.io OR site:job-boards.greenhouse.io fintech OR payments OR trading OR "financial services" "Software Engineer"'
+    enabled: true
+
+  - name: Ashby — Fintech
+    query: 'site:jobs.ashbyhq.com fintech OR payments OR trading OR "financial services" "Software Engineer"'
+    enabled: true
+
+  # -- Full-Stack / Backend / Infrastructure --
+  - name: Greenhouse — Full-Stack & Backend
+    query: 'site:boards.greenhouse.io OR site:job-boards.greenhouse.io "Full Stack" OR "Full-Stack" OR "Backend Engineer" OR "Infrastructure Engineer" remote'
+    enabled: true
+
+  - name: Ashby — Full-Stack & Backend
+    query: 'site:jobs.ashbyhq.com "Full Stack" OR "Full-Stack" OR "Backend Engineer" OR "Infrastructure Engineer" remote'
+    enabled: true
+
+  - name: Lever — Full-Stack & Backend
+    query: 'site:jobs.lever.co "Full Stack" OR "Full-Stack" OR "Backend Engineer" OR "Infrastructure Engineer" remote'
+    enabled: true
+
+  # -- Kubernetes / Docker / DevOps --
+  - name: DevOps & Platform — All portals
+    query: '"Kubernetes" OR "Docker" OR "DevOps" OR "Platform Engineer" OR "Site Reliability" OR "SRE" "Software Engineer" remote OR Boston'
+    enabled: true
+
+  # -- Cybersecurity --
+  - name: Cybersecurity — All portals
+    query: '"Security Engineer" OR "Application Security" OR "AppSec" OR "Cybersecurity" remote OR Boston'
+    enabled: true
+
+  # -- Boston-area tech --
+  - name: Boston — SWE & AI
+    query: '"Software Engineer" OR "AI Engineer" OR "ML Engineer" Boston OR Cambridge OR "Greater Boston"'
+    enabled: true
+
+  # -- Wellfound (startups) --
+  - name: Wellfound — AI Engineer
+    query: 'site:wellfound.com "AI Engineer" OR "ML Engineer" OR "Software Engineer" AI remote OR Boston'
+    enabled: true
+
+  - name: Wellfound — Fintech
+    query: 'site:wellfound.com fintech OR payments OR trading "Software Engineer" remote OR Boston'
+    enabled: true
+
+  # -- Workable --
+  - name: Workable — AI Roles
+    query: 'site:apply.workable.com "AI" "Product Manager" OR "Solutions Architect" OR "AI Engineer" remote'
     enabled: true
 
 # -- Tracked companies --
@@ -494,4 +603,294 @@ tracked_companies:
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/travelperk'
     notes: "Barcelona. Business travel unicorn."
+    enabled: true
+
+  # -- Fintech & Payments --
+
+  - name: Stripe
+    careers_url: https://job-boards.greenhouse.io/stripe
+    api: https://boards-api.greenhouse.io/v1/boards/stripe/jobs
+    notes: "Payments infrastructure. Strong new grad program."
+    enabled: true
+
+  - name: Plaid
+    careers_url: https://job-boards.greenhouse.io/plaid
+    api: https://boards-api.greenhouse.io/v1/boards/plaid/jobs
+    notes: "Fintech APIs. SF/NYC/Remote."
+    enabled: true
+
+  - name: Robinhood
+    careers_url: https://job-boards.greenhouse.io/robinhood
+    api: https://boards-api.greenhouse.io/v1/boards/robinhood/jobs
+    notes: "Trading platform. Menlo Park/NYC."
+    enabled: true
+
+  - name: Coinbase
+    careers_url: https://job-boards.greenhouse.io/coinbase
+    api: https://boards-api.greenhouse.io/v1/boards/coinbase/jobs
+    notes: "Crypto exchange. Remote-first."
+    enabled: true
+
+  - name: Ramp
+    careers_url: https://job-boards.greenhouse.io/ramp
+    api: https://boards-api.greenhouse.io/v1/boards/ramp/jobs
+    notes: "Corporate card + spend management. NYC."
+    enabled: true
+
+  - name: Brex
+    careers_url: https://job-boards.greenhouse.io/brex
+    api: https://boards-api.greenhouse.io/v1/boards/brex/jobs
+    notes: "Fintech for startups. SF/NYC/Remote."
+    enabled: true
+
+  - name: Mercury
+    careers_url: https://jobs.ashbyhq.com/mercury
+    scan_method: websearch
+    scan_query: 'site:jobs.ashbyhq.com/mercury'
+    notes: "Banking for startups. SF/Remote."
+    enabled: true
+
+  - name: Chime
+    careers_url: https://job-boards.greenhouse.io/chime
+    api: https://boards-api.greenhouse.io/v1/boards/chime/jobs
+    notes: "Neobank. Chicago/Remote."
+    enabled: true
+
+  - name: Affirm
+    careers_url: https://job-boards.greenhouse.io/affirm
+    api: https://boards-api.greenhouse.io/v1/boards/affirm/jobs
+    notes: "BNPL fintech. SF/NYC/Remote."
+    enabled: true
+
+  - name: Square (Block)
+    careers_url: https://careers.squareup.com/us/en
+    scan_method: websearch
+    scan_query: 'site:careers.squareup.com "Software Engineer" OR "AI Engineer"'
+    notes: "Payments + fintech. SF/NYC/Remote."
+    enabled: true
+
+  - name: Betterment
+    careers_url: https://job-boards.greenhouse.io/betterment
+    api: https://boards-api.greenhouse.io/v1/boards/betterment/jobs
+    notes: "Robo-advisor / wealth management. NYC."
+    enabled: true
+
+  - name: Carta
+    careers_url: https://job-boards.greenhouse.io/carta
+    api: https://boards-api.greenhouse.io/v1/boards/carta/jobs
+    notes: "Equity management. SF/NYC/Remote."
+    enabled: true
+
+  # -- Boston-area Tech --
+
+  - name: HubSpot
+    careers_url: https://job-boards.greenhouse.io/hubspot
+    api: https://boards-api.greenhouse.io/v1/boards/hubspot/jobs
+    notes: "Cambridge. CRM + marketing platform. Strong new grad program."
+    enabled: true
+
+  - name: DraftKings
+    careers_url: https://job-boards.greenhouse.io/draftkings
+    api: https://boards-api.greenhouse.io/v1/boards/draftkings/jobs
+    notes: "Boston. Sports betting + gaming."
+    enabled: true
+
+  - name: Toast
+    careers_url: https://job-boards.greenhouse.io/toast
+    api: https://boards-api.greenhouse.io/v1/boards/toast/jobs
+    notes: "Boston. Restaurant POS + fintech."
+    enabled: true
+
+  - name: Wayfair
+    careers_url: https://job-boards.greenhouse.io/wayfair
+    api: https://boards-api.greenhouse.io/v1/boards/wayfair/jobs
+    notes: "Boston. E-commerce tech."
+    enabled: true
+
+  - name: Datadog
+    careers_url: https://job-boards.greenhouse.io/datadog
+    api: https://boards-api.greenhouse.io/v1/boards/datadog/jobs
+    notes: "NYC/Boston. Observability platform."
+    enabled: true
+
+  - name: Rapid7
+    careers_url: https://job-boards.greenhouse.io/rapid7
+    api: https://boards-api.greenhouse.io/v1/boards/rapid7/jobs
+    notes: "Boston. Cybersecurity / vulnerability management."
+    enabled: true
+
+  - name: Cybereason
+    careers_url: https://job-boards.greenhouse.io/cybereason
+    api: https://boards-api.greenhouse.io/v1/boards/cybereason/jobs
+    notes: "Boston. Endpoint detection & response."
+    enabled: true
+
+  - name: DraftKings
+    careers_url: https://job-boards.greenhouse.io/draftkings
+    api: https://boards-api.greenhouse.io/v1/boards/draftkings/jobs
+    notes: "Boston. Sports tech + real-time systems."
+    enabled: true
+
+  - name: Klaviyo
+    careers_url: https://job-boards.greenhouse.io/klaviyo
+    api: https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs
+    notes: "Boston. Marketing automation + AI."
+    enabled: true
+
+  - name: DataRobot
+    careers_url: https://job-boards.greenhouse.io/datarobot
+    api: https://boards-api.greenhouse.io/v1/boards/datarobot/jobs
+    notes: "Boston. AutoML / AI platform."
+    enabled: true
+
+  # -- Cybersecurity --
+
+  - name: CrowdStrike
+    careers_url: https://job-boards.greenhouse.io/crowdstrike
+    api: https://boards-api.greenhouse.io/v1/boards/crowdstrike/jobs
+    notes: "Endpoint security. Remote-friendly."
+    enabled: true
+
+  - name: Snyk
+    careers_url: https://job-boards.greenhouse.io/snyk
+    api: https://boards-api.greenhouse.io/v1/boards/snyk/jobs
+    notes: "Developer security platform. Boston/Remote."
+    enabled: true
+
+  - name: Cloudflare
+    careers_url: https://job-boards.greenhouse.io/cloudflare
+    api: https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs
+    notes: "Web infrastructure + security. Remote."
+    enabled: true
+
+  - name: 1Password
+    careers_url: https://job-boards.greenhouse.io/1password
+    api: https://boards-api.greenhouse.io/v1/boards/1password/jobs
+    notes: "Password management. Toronto/Remote."
+    enabled: true
+
+  - name: Okta
+    careers_url: https://job-boards.greenhouse.io/okta
+    api: https://boards-api.greenhouse.io/v1/boards/okta/jobs
+    notes: "Identity & access management. Remote."
+    enabled: true
+
+  # -- New Grad / Early Career Friendly --
+
+  - name: Google
+    careers_url: https://www.google.com/about/careers/applications
+    scan_method: websearch
+    scan_query: 'site:google.com/about/careers "Software Engineer" "New Grad" OR "University Grad"'
+    notes: "Strong new grad SWE program."
+    enabled: true
+
+  - name: Microsoft
+    careers_url: https://careers.microsoft.com
+    scan_method: websearch
+    scan_query: 'site:careers.microsoft.com "Software Engineer" "University Grad" OR "New Grad"'
+    notes: "New grad SWE + AI roles."
+    enabled: true
+
+  - name: Amazon
+    careers_url: https://www.amazon.jobs
+    scan_method: websearch
+    scan_query: 'site:amazon.jobs "Software Development Engineer" "New Grad" OR "University Grad"'
+    notes: "SDE new grad program."
+    enabled: true
+
+  - name: Meta
+    careers_url: https://www.metacareers.com
+    scan_method: websearch
+    scan_query: 'site:metacareers.com "Software Engineer" "University Grad" OR "New Grad"'
+    notes: "New grad SWE + AI infra."
+    enabled: true
+
+  - name: Apple
+    careers_url: https://jobs.apple.com/en-us/search
+    scan_method: websearch
+    scan_query: 'site:jobs.apple.com "Software Engineer" "New Grad" OR "University"'
+    notes: "SWE new grad. Cupertio/Boston/Remote."
+    enabled: true
+
+  - name: NVIDIA
+    careers_url: https://nvidia.wd5.myworkdayjobs.com/en-US/nvidiaexternalcareers
+    scan_method: websearch
+    scan_query: 'site:nvidia.com "New Grad" OR "University Grad" "Software Engineer" OR "AI Engineer"'
+    notes: "AI/GPU leader. Strong new grad program."
+    enabled: true
+
+  - name: Snowflake
+    careers_url: https://job-boards.greenhouse.io/snowflake
+    api: https://boards-api.greenhouse.io/v1/boards/snowflake/jobs
+    notes: "Data cloud. Sponsor prize at your hackathon."
+    enabled: true
+
+  - name: Databricks
+    careers_url: https://job-boards.greenhouse.io/databricks
+    api: https://boards-api.greenhouse.io/v1/boards/databricks/jobs
+    notes: "Data + AI platform. Remote."
+    enabled: true
+
+  # -- AI Infra & Developer Tools --
+
+  - name: Hugging Face
+    careers_url: https://job-boards.greenhouse.io/huggingface
+    api: https://boards-api.greenhouse.io/v1/boards/huggingface/jobs
+    notes: "AI model hub. You use this at Unbounded Scaling."
+    enabled: true
+
+  - name: Replicate
+    careers_url: https://jobs.ashbyhq.com/replicate
+    scan_method: websearch
+    scan_query: 'site:jobs.ashbyhq.com/replicate'
+    notes: "AI model hosting. SF/Remote."
+    enabled: true
+
+  - name: Modal
+    careers_url: https://modal.com/careers
+    scan_method: websearch
+    scan_query: 'site:modal.com/careers "engineer" OR "AI"'
+    notes: "Serverless GPU compute. SF."
+    enabled: true
+
+  - name: Anyscale
+    careers_url: https://job-boards.greenhouse.io/anyscale
+    api: https://boards-api.greenhouse.io/v1/boards/anyscale/jobs
+    notes: "Ray distributed computing. SF/Remote."
+    enabled: true
+
+  - name: Together AI
+    careers_url: https://jobs.ashbyhq.com/together
+    scan_method: websearch
+    scan_query: 'site:jobs.ashbyhq.com/together'
+    notes: "Open-source AI model serving."
+    enabled: true
+
+  - name: Fireworks AI
+    careers_url: https://job-boards.greenhouse.io/fireworks-ai
+    api: https://boards-api.greenhouse.io/v1/boards/fireworks-ai/jobs
+    notes: "Generative AI inference platform."
+    enabled: true
+
+  # -- Consulting & Agencies (matches your Unbounded Scaling experience) --
+
+  - name: Thoughtworks
+    careers_url: https://www.thoughtworks.com/careers
+    scan_method: websearch
+    scan_query: 'site:thoughtworks.com/careers "Software Engineer" OR "AI Engineer"'
+    notes: "Tech consulting. Remote/Boston."
+    enabled: true
+
+  - name: Slalom
+    careers_url: https://www.slalom.com/careers
+    scan_method: websearch
+    scan_query: 'site:slalom.com/careers "Software Engineer" OR "AI Engineer" OR "Data Engineer"'
+    notes: "Consulting. Boston office."
+    enabled: true
+
+  - name: Accenture
+    careers_url: https://www.accenture.com/us-en/careers
+    scan_method: websearch
+    scan_query: 'site:accenture.com/careers "Software Engineer" OR "AI Engineer" OR "Technology Consultant"'
+    notes: "Global consulting. AI + tech roles."
     enabled: true
