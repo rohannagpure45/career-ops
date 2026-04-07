@@ -1,9 +1,11 @@
-# Portal Scanner Configuration
+  # Portal Scanner Configuration
 # Used by /career-ops scan to discover new offers automatically.
 #
 # Strategy (3 levels):
 #   1. Playwright → careers_url of each company (real-time, reliable)
-#   2. Greenhouse API → structured JSON (fast, Greenhouse-only)
+#   2. Gree
+
+Greenhouse API → structured JSON (fast, Greenhouse-only)
 #   3. WebSearch with site: filters (broad discovery, may be stale)
 #
 # IMPORTANT: Each company in tracked_companies MUST have careers_url.
