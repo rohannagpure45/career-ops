@@ -1,9 +1,19 @@
 import { chromium } from 'playwright';
+import { isAutoSubmitEnabled } from './lib/config.mjs';
+
+const AUTO_SUBMIT = isAutoSubmitEnabled();
+
+if (!AUTO_SUBMIT) {
+  console.log('=== AUTO-SUBMIT DISABLED ===');
+  console.log('Set auto_submit: true in config/profile.yml to enable auto-submit');
+  console.log('Use fill-cartesian.mjs to fill and preview the form without submitting.');
+  process.exit(0);
+}
 
 const browser = await chromium.launch({ headless: false });
 const page = await browser.newPage();
 
-console.log('=== FILL AND SUBMIT CARTESIAN FORM ===');
+console.log('=== FILL AND SUBMIT CARTESIAN FORM (AUTO-SUBMIT ENABLED) ===');
 await page.goto('https://job-boards.greenhouse.io/cartesiansystems/jobs/4201825009', { waitUntil: 'networkidle', timeout: 30000 });
 await page.waitForTimeout(2000);
 

@@ -1,9 +1,14 @@
 import { chromium } from 'playwright';
+import { isAutoSubmitEnabled } from './lib/config.mjs';
+
+const AUTO_SUBMIT = isAutoSubmitEnabled();
 
 const browser = await chromium.launch({ headless: false });
 const page = await browser.newPage();
 
 console.log('=== CARTESIAN FORM FILL ===');
+console.log(`Auto-submit: ${AUTO_SUBMIT ? 'ENABLED' : 'DISABLED'}`);
+
 await page.goto('https://job-boards.greenhouse.io/cartesiansystems/jobs/4201825009', { waitUntil: 'networkidle', timeout: 30000 });
 await page.waitForTimeout(2000);
 
@@ -78,6 +83,24 @@ const bodyText = await page.innerText('body');
 console.log('\nForm state (first 4000):');
 console.log(bodyText.substring(0, 4000));
 
-console.log('\n=== CARTESIAN FORM READY TO SUBMIT ===');
+// Submit logic
+const submitBtn = page.locator('button[type="submit"]');
+if (await submitBtn.isVisible()) {
+  if (AUTO_SUBMIT) {
+    console.log('\n=== AUTO-SUBMIT ENABLED - CLICKING SUBMIT ===');
+    await submitBtn.click();
+    await page.waitForTimeout(5000);
+    console.log('After submit URL:', page.url());
+    const resultText = await page.innerText('body');
+    console.log('Result (first 3000):', resultText.substring(0, 3000));
+  } else {
+    console.log('\n=== FORM READY TO SUBMIT (auto_submit disabled) ===');
+    console.log('Set auto_submit: true in config/profile.yml to enable auto-submit');
+    await page.screenshot('/tmp/cartesian-form-ready.png');
+    console.log('Screenshot saved to /tmp/cartesian-form-ready.png');
+  }
+} else {
+  console.log('Submit button not visible');
+}
 
 await browser.close();
